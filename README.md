@@ -1,45 +1,52 @@
-# How Hotel Demand Builds: Booking Pace & Pickup Analysis
+# How Hotel Demand Builds: Booking Pace and Pickup Learning Guide
 
-A step-by-step hospitality revenue analytics learning guide and empirical study examining how hotel demand builds across lead times, pace curves, pickup heatmaps, market segments, and group booking blocks, using **75,166 stayed reservations** across a City Hotel and a Resort Hotel[cite: 5, 6].
-
----
-
-## Repository Contents
-
-* **`Hotel_Pace_and_Pickup_Learning_Guide.pdf`**: A 14-page step-by-step learning guide covering core revenue management vocabulary, worked examples, a 10-step analytical methodology, executive interpretations, and a self-check quiz[cite: 5, 18].
-* **`hotel_bookings demand.csv`**: The underlying booking dataset containing **119,390 total reservations** and **32 variables** for arrival dates from **July 2015 to August 2017** (Antonio, Almeida & Nunes, 2019)[cite: 5, 8].
+A step-by-step educational resource for hospitality students, revenue analysts, and hotel professionals to master booking lead times, demand pace curves, pickup heatmaps, market segment clocks, and group block dynamics using real booking data (75,166 stayed reservations across a City Hotel and a Resort Hotel from July 2015 to August 2017).
 
 ---
 
-## Key Analytical Findings
+## Repository Files and Direct Links
 
-* **Booking Window Distribution:** Half of all stayed bookings are made within **45 days** of arrival (median), while the mean lead time is **80 days** due to a long tail of early bookings[cite: 6, 9]. Nearly **1 in 4 bookings (23.7%)** arrives within 7 days of check-in, and **7.9%** are booked on the arrival day[cite: 9].
-* **City Hotel vs. Resort Hotel:** The City Hotel (`46,228` stayed bookings; `EUR 105.7` avg ADR) has a median lead time of **50 days**, whereas the Resort Hotel (`28,938` stayed bookings; `EUR 90.8` avg ADR) books closer to arrival with a **38-day** median lead time and **28.9%** last-7-day pickup[cite: 12].
-* **Weekend vs. Weekday Arrivals:** Weekend arrivals (Fri to Sun) commit roughly 10 days earlier at the median (**51 days**) than weekday arrivals (**41 days**)[cite: 13].
-* **Market Segment Timetables:** Median lead times separate customer segments sharply, ranging from **3 days** (Aviation and Complementary) and **6 days** (Corporate) to **11 days** (Direct), **43 days** (Online TA), **90 days** (Offline TA/TO), and **107 days** (Groups)[cite: 15]. Online TA and Direct achieve the highest average ADR (**EUR 113.9**)[cite: 15].
-* **ADR Across the Booking Window:** Same-day bookings carry the lowest average rate (**EUR 82.8**), while rates peak for bookings made **8 to 180 days** ahead (**EUR 104.0 to EUR 106.2**)[cite: 16].
-* **What Drives Peak Arrival Dates:** Analysis of the 10 busiest arrival dates (`181 to 255` bookings per day) reveals that peak demand is driven by single contracted **Groups** or **Offline TA/TO** blocks ranging from **26 to 122 rooms** booked on a single day[cite: 17].
+* **[Hotel Pace and Pickup Learning Guide (PDF)](Hotel_Pace_and_Pickup_Learning_Guide.pdf)** - Complete 14-page step-by-step handbook featuring plain-language definitions, worked mathematical examples, analytical walkthroughs, and a self-check quiz with answers.
+* **[Hotel Bookings Demand Dataset (CSV)](hotel_bookings%20demand.csv)** - Raw dataset containing 119,390 booking records and 32 attributes used to build every metric and table in the guide.
 
 ---
 
-## Guide Structure
+## What You Will Learn
 
-1. **Part 1: Foundations.** Core revenue management definitions (`Stayed Booking`, `Lead Time`, `Pace`, `Pickup`, `Pace Curve`, `Block Booking`, `Heatmap`) and worked examples[cite: 5, 6, 7].
-2. **Part 2: Ten-Step Analysis.**
-   * **Step 1:** Data preparation, date reconstruction (`booking_date = arrival_date - lead_time`), and filtering to realized `Check-Out` stays (`75,166` rows)[cite: 8].
-   * **Step 2:** Booking window histogram and cumulative lead-time distribution[cite: 9].
-   * **Step 3:** Single-date pace curve deep dive (`5 December 2015`, `255` stayed bookings)[cite: 10].
-   * **Step 4:** August 2017 daily pickup heatmap (`0 to 120` days out)[cite: 11].
-   * **Step 5:** City Hotel vs. Resort Hotel timing and ADR comparison[cite: 12].
-   * **Step 6:** Weekend vs. weekday arrival behavior[cite: 13].
-   * **Step 7 & 8:** Market segment pickup curves and one-page segment profiles[cite: 14, 15].
-   * **Step 9:** ADR behavior across lead-time buckets[cite: 16].
-   * **Step 10:** Decomposition of the 10 busiest arrival dates and block-booking spikes[cite: 17].
-3. **Part 3: Putting It Together.** Revenue manager decision matrix, methodological caveats, and a 6-question self-check quiz with solutions[cite: 5, 18].
+This guide requires no prior revenue management background. Every concept is introduced in plain language and applied directly to real hotel performance records:
+
+1. **Part 1: Foundations and Worked Examples**
+   * Why hotel inventory perishability makes pace and pickup essential for pricing and restriction decisions.
+   * Core revenue vocabulary: stayed bookings, derived booking dates, lead time (booking window), cumulative pace curves, pickup velocity, ADR, and block bookings.
+   * Worked step-by-step calculations for lead-time derivation, median vs. mean skewness, and cumulative booking shares.
+2. **Part 2: Ten-Step Analytical Walkthrough**
+   * **Step 1 - Data Preparation:** Filtering 119,390 raw rows to 75,166 honored stays (`Check-Out`) and deriving booking dates from lead times.
+   * **Step 2 - Booking Window Distribution:** Understanding right-skewed lead times (45-day median vs. 80-day mean; 23.7% booked within 7 days; 14.1% booked over 180 days ahead).
+   * **Step 3 - Single-Date Pace Curve:** Tracing how the busiest arrival date (05 Dec 2015, 255 bookings) built in discrete jumps from contracted group blocks.
+   * **Step 4 - Pickup Heatmap:** Reading arrival-date by lead-time grids across August 2017 (3,109 stays) to spot volatile late-pickup dates vs. stable early-built dates.
+   * **Step 5 - Property Comparison:** Comparing shares rather than raw counts to uncover why Resort Hotel books closer to arrival (38-day median) than City Hotel (50-day median).
+   * **Step 6 - Day-of-Week Clocks:** Contrasting leisure-weighted weekend arrivals (Friday to Sunday, 51-day median) against weekday arrivals (Monday to Thursday, 41-day median).
+   * **Steps 7 and 8 - Market Segment Profiles:** Benchmarking segment timelines from Corporate (6-day median) and Direct (11-day median) to Offline TA/TO (90 days) and Groups (107 days).
+   * **Step 9 - ADR by Lead Time:** Separating revenue concentration from true rate realization (EUR 82.8 same-day ADR vs. EUR 104.0 to 106.2 between 8 and 180 days out).
+   * **Step 10 - Peak Date Anatomy:** Diagnosing the ten busiest arrival dates (181 to 255 stays) to show how single-day Groups and Offline TA/TO blocks drive 38% to 57% of volume on six of the top ten days.
+3. **Part 3: Synthesis and Self-Check Quiz**
+   * A decision matrix mapping common revenue management questions to the exact analytical views that answer them.
+   * Methodological guardrails (honored stays vs. cancellations, derived timestamps, and correlation vs. causation).
+   * Six practice questions with worked solutions to test comprehension.
 
 ---
 
-## Data Source & Attribution
+## Key Analytical Benchmarks Covered in the Guide
 
-* **Dataset Reference:** Antonio, N., Almeida, A., & Nunes, L. (2019). *Hotel booking demand datasets*.
-* **Author:** Hosea Ngo Sali, Hotel Revenue Analyst (M.A. International Tourism Development)
+| Metric / Segment | Key Finding | Operational Takeaway |
+| :--- | :--- | :--- |
+| **Overall Booking Window** | 45-day median; 80-day mean; 7.9% same-day | Report both median and mean to capture late-booking volume and the 180+ day tail |
+| **City vs. Resort Timing** | City: 50-day median (EUR 105.7 ADR); Resort: 38-day median (EUR 90.8 ADR) | Normalize by property booking share rather than raw counts to avoid size bias |
+| **Weekend vs. Weekday** | Weekend: 51-day median; Weekday: 41-day median | Weekday inventory relies more on final-week pickup (26.5% vs. 20.0%) |
+| **Fastest vs. Slowest Segments** | Corporate (6 days) and Direct (11 days) vs. Groups (107 days) | Track segment-level pace curves instead of a single blended hotel curve |
+| **Rate by Booking Window** | Same-day: EUR 82.8 ADR; 8 to 180 days: EUR 104.0 to 106.2 ADR | Protect mid-window rates and account for lower same-day rate realization |
+| **Top 10 Peak Dates** | 10 single-day blocks account for 683 of 2,203 bookings (31%) | Separate contracted group/trade blocks from transient pickup forecasts |
+
+---
+
+ 
